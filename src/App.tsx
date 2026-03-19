@@ -3,8 +3,9 @@ import { motion, useScroll, useTransform, AnimatePresence, useInView, animate } 
 import { 
   Menu, X, ChevronRight, Star, MapPin, Phone, Mail, 
   Instagram, Facebook, MessageCircle, Clock, Shield, Sparkles, 
-  CheckCircle2, ArrowRight, ChevronDown, Award
+  CheckCircle2, ArrowRight, ChevronDown, Award, ChevronLeft
 } from 'lucide-react';
+import { BeforeAfterSlider } from './components/BeforeAfterSlider';
 
 const WHATSAPP_NUMBER = "5527999975993"; // Updated number
 const WHATSAPP_MESSAGE = "Olá! Gostaria de agendar uma avaliação com o Dr. Artur Cirilo.";
@@ -275,15 +276,13 @@ export default function App() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-silver/20">
-                <img 
-                  src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Tecnologia Odontológica" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="absolute -bottom-8 -left-8 glass-panel p-6 rounded-xl max-w-xs hidden md:block">
+              <BeforeAfterSlider 
+                beforeImage="https://lh3.googleusercontent.com/d/1rWkXgDeQroLFAfRZGQA2nW4MqYV6vL94"
+                afterImage="https://lh3.googleusercontent.com/d/1-4E9_zxbASpLKcV7l-DM06TGKKboaD9x"
+                beforeLabel="Antes"
+                afterLabel="Depois"
+              />
+              <div className="absolute -bottom-8 -left-8 glass-panel p-6 rounded-xl max-w-xs hidden md:block z-30">
                 <div className="flex items-center gap-4 mb-2">
                   <Shield className="text-cyan-text" size={28} />
                   <h4 className="font-bold text-lg text-deep-blue">Segurança Digital</h4>
